@@ -47,6 +47,7 @@
             this.buttonUj.TabIndex = 1;
             this.buttonUj.Text = "Új rendelés";
             this.buttonUj.UseVisualStyleBackColor = false;
+            this.buttonUj.Click += new System.EventHandler(this.buttonUj_Click);
             // 
             // buttonTorles
             // 
@@ -60,6 +61,7 @@
             this.buttonTorles.TabIndex = 2;
             this.buttonTorles.Text = "Rendelés törlése";
             this.buttonTorles.UseVisualStyleBackColor = false;
+            this.buttonTorles.Click += new System.EventHandler(this.buttonTorles_Click);
             // 
             // buttonFenyok
             // 
@@ -73,6 +75,7 @@
             this.buttonFenyok.TabIndex = 3;
             this.buttonFenyok.Text = "Elérhető fenyőink";
             this.buttonFenyok.UseVisualStyleBackColor = false;
+            this.buttonFenyok.Click += new System.EventHandler(this.buttonFenyok_Click);
             // 
             // label1
             // 
