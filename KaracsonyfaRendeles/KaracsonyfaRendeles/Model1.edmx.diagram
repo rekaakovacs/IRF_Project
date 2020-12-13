@@ -4,10 +4,14 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="fa31f07e043546f0aece028edb64b603" Name="Diagram1">
-        <EntityTypeShape EntityType="KaracsonyfaModel.Fenyo" Width="1.5" PointX="0.75" PointY="1.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="KaracsonyfaModel.Ugyfel" Width="1.5" PointX="5.5" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="KaracsonyfaModel.Rendeles" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
+      <Diagram DiagramId="f52b8fed7dc447e39073e4675fcc1508" Name="Diagram1">
+        <EntityTypeShape EntityType="KaracsonyfaModel.Fenyo" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="KaracsonyfaModel.Meret" Width="1.5" PointX="0.75" PointY="1.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="KaracsonyfaModel.Tipus" Width="1.5" PointX="1.625" PointY="3.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="KaracsonyfaModel.Ugyfel" Width="1.5" PointX="7.625" PointY="1.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="KaracsonyfaModel.Rendeles" Width="1.5" PointX="5.25" PointY="1" IsExpanded="true" />
+        <AssociationConnector Association="KaracsonyfaModel.FK_Fenyo_Meret" ManuallyRouted="false" />
+        <AssociationConnector Association="KaracsonyfaModel.FK_Fenyo_Tipus" ManuallyRouted="false" />
         <AssociationConnector Association="KaracsonyfaModel.FK_Rendeles_Fenyo" ManuallyRouted="false" />
         <AssociationConnector Association="KaracsonyfaModel.FK_Rendeles_Ugyfel" ManuallyRouted="false" />
       </Diagram>

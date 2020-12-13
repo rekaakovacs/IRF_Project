@@ -26,6 +26,8 @@ namespace KaracsonyfaRendeles
         }
     
         public virtual DbSet<Fenyo> Fenyo { get; set; }
+        public virtual DbSet<Meret> Meret { get; set; }
+        public virtual DbSet<Tipus> Tipus { get; set; }
         public virtual DbSet<Ugyfel> Ugyfel { get; set; }
         public virtual DbSet<Rendeles> Rendeles { get; set; }
     }

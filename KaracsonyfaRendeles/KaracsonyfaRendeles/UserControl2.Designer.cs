@@ -58,6 +58,10 @@
             this.felhasznalonev = new System.Windows.Forms.TextBox();
             this.label15 = new System.Windows.Forms.Label();
             this.jelszo = new System.Windows.Forms.TextBox();
+            this.label16 = new System.Windows.Forms.Label();
+            this.comboBoxfizmod = new System.Windows.Forms.ComboBox();
+            this.label17 = new System.Windows.Forms.Label();
+            this.TextBoxdatum = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // comboBoxtipus
@@ -215,6 +219,7 @@
             this.mentes.TabIndex = 30;
             this.mentes.Text = "Megrendelem";
             this.mentes.UseVisualStyleBackColor = false;
+            this.mentes.Click += new System.EventHandler(this.mentes_Click);
             // 
             // letoltes
             // 
@@ -335,11 +340,50 @@
             this.jelszo.Size = new System.Drawing.Size(118, 20);
             this.jelszo.TabIndex = 44;
             // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label16.Location = new System.Drawing.Point(39, 217);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(204, 19);
+            this.label16.TabIndex = 45;
+            this.label16.Text = "Fizetési mód kiválasztása:";
+            // 
+            // comboBoxfizmod
+            // 
+            this.comboBoxfizmod.FormattingEnabled = true;
+            this.comboBoxfizmod.Location = new System.Drawing.Point(249, 217);
+            this.comboBoxfizmod.Name = "comboBoxfizmod";
+            this.comboBoxfizmod.Size = new System.Drawing.Size(121, 21);
+            this.comboBoxfizmod.TabIndex = 46;
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label17.Location = new System.Drawing.Point(189, 265);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(54, 16);
+            this.label17.TabIndex = 47;
+            this.label17.Text = "Dátum:";
+            // 
+            // TextBoxdatum
+            // 
+            this.TextBoxdatum.Location = new System.Drawing.Point(249, 265);
+            this.TextBoxdatum.Name = "TextBoxdatum";
+            this.TextBoxdatum.Size = new System.Drawing.Size(118, 20);
+            this.TextBoxdatum.TabIndex = 48;
+            // 
             // UserControl2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightGray;
+            this.Controls.Add(this.TextBoxdatum);
+            this.Controls.Add(this.label17);
+            this.Controls.Add(this.comboBoxfizmod);
+            this.Controls.Add(this.label16);
             this.Controls.Add(this.jelszo);
             this.Controls.Add(this.label15);
             this.Controls.Add(this.felhasznalonev);
@@ -409,5 +453,9 @@
         private System.Windows.Forms.TextBox felhasznalonev;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.TextBox jelszo;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.ComboBox comboBoxfizmod;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.TextBox TextBoxdatum;
     }
 }

@@ -12,22 +12,18 @@ namespace KaracsonyfaRendeles
     using System;
     using System.Collections.Generic;
     
-    public partial class Fenyo
+    public partial class Tipus
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Fenyo()
+        public Tipus()
         {
-            this.Rendeles = new HashSet<Rendeles>();
+            this.Fenyo = new HashSet<Fenyo>();
         }
     
-        public int fenyo_id { get; set; }
-        public int tipus_fk { get; set; }
-        public int meret_fk { get; set; }
-        public int ar { get; set; }
+        public int tipus_id { get; set; }
+        public string tipusnev { get; set; }
     
-        public virtual Meret Meret { get; set; }
-        public virtual Tipus Tipus { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Rendeles> Rendeles { get; set; }
+        public virtual ICollection<Fenyo> Fenyo { get; set; }
     }
 }

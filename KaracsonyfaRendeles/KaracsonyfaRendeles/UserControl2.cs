@@ -19,27 +19,102 @@ namespace KaracsonyfaRendeles
 
             tipus();
             meret();
+            
         }
 
         //Választási lehetőségek
         private void tipus()
         {
-            var tipus = from t in context.Fenyo
+            var tipus = from t in context.Tipus
                       select t;
-            comboBoxtipus.DataSource = tipus.Distinct().ToList();
-            comboBoxtipus.DisplayMember = "tipus";
-            comboBoxtipus.ValueMember = "fenyo_id";
+            comboBoxtipus.DataSource = tipus.ToList();
+            comboBoxtipus.DisplayMember = "tipusnev";
+            comboBoxtipus.ValueMember = "tipus_id";
         }
 
         private void meret()
         {
-            var meret = from m in context.Fenyo
-                      select m;
+            var meret = from m in context.Meret
+                        select m;
             comboBoxmeret.DataSource = meret.Distinct().ToList();
-            comboBoxmeret.DisplayMember = "meret";
-            comboBoxmeret.ValueMember = "fenyo_id";
+            comboBoxmeret.DisplayMember = "meretnev";
+            comboBoxmeret.ValueMember = "meret_id";
         }
 
-        
+      
+
+        private void mentes_Click(object sender, EventArgs e)
+        {
+            Ugyfel u = new Ugyfel();
+            Rendeles r = new Rendeles();
+
+            if (ugyfelnev.Text != "" && telefonszam.Text != "" && email.Text != "" && irszam.Text != "" && telepules.Text != "" && utca.Text != "" && hazszam.Text != "" && felhasznalonev.Text != "" && jelszo.Text != "")
+            {
+
+                u.nev = ugyfelnev.Text;
+                u.telefon = telefonszam.Text;
+                u.email = email.Text;
+                u.irszam = irszam.Text;
+                u.varos = telepules.Text;
+                u.utca = utca.Text;
+                u.hazszam = hazszam.Text;
+                u.username = felhasznalonev.Text;
+                u.password = jelszo.Text;
+
+                context.Ugyfel.Add(u);
+
+               
+                r.ugyfel_fk = u.ugyfel_id;
+                r.fenyo_fk = ((Fenyo)comboBoxtipus.SelectedItem).fenyo_id;
+                //r.datum = TextBoxdatum.Text;
+                r.fizmod = comboBoxfizmod.Text;
+
+                context.Rendeles.Add(r);
+
+               
+
+                try
+                {
+                    context.SaveChanges();
+                    MessageBox.Show("Sikeres rendelés!");
+                    mentes.Enabled = false;
+                    letoltes.Visible = true;
+                    if (letoltes.Visible == true)
+                    {
+                        comboBoxmeret.Enabled = false;
+                        comboBoxtipus.Enabled = false;
+                        comboBoxfizmod.Enabled = false;
+                       
+                        TextBoxdatum.Enabled = false;
+                        ugyfelnev.Enabled = false;
+                        telefonszam.Enabled = false;
+                        email.Enabled = false;
+                        irszam.Enabled = false;
+                        telepules.Enabled = false;
+                        utca.Enabled = false;
+                        hazszam.Enabled = false;
+                     
+                        felhasznalonev.Enabled = false;
+                        jelszo.Enabled = false;
+
+                    }
+
+
+
+                }
+                catch (Exception)
+                {
+
+                    MessageBox.Show("A sikertelen, próbálja újra!");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Minden adatot ki kell tölteni!");
+            }
+
+        }
+
+      
     }
 }
