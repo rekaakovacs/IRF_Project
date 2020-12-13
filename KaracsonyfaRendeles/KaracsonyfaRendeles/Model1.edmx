@@ -1,0 +1,243 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="KaracsonyfaModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Fenyo">
+          <Key>
+            <PropertyRef Name="fenyo_id" />
+          </Key>
+          <Property Name="fenyo_id" Type="int" Nullable="false" />
+          <Property Name="tipus" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="meret" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="ar" Type="int" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'C:\TEMP\KARACSONYFA.MDF.dbo.Rendeles' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="Rendeles">
+          <Key>
+            <PropertyRef Name="rendeles_sk" />
+            <PropertyRef Name="fenyo_fk" />
+            <PropertyRef Name="ugyfel_fk" />
+            <PropertyRef Name="datum" />
+            <PropertyRef Name="fizmod" />
+          </Key>
+          <Property Name="rendeles_sk" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="fenyo_fk" Type="int" Nullable="false" />
+          <Property Name="ugyfel_fk" Type="int" Nullable="false" />
+          <Property Name="datum" Type="date" Nullable="false" />
+          <Property Name="fizmod" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Ugyfel">
+          <Key>
+            <PropertyRef Name="ugyfel_id" />
+          </Key>
+          <Property Name="ugyfel_id" Type="int" Nullable="false" />
+          <Property Name="nev" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="telefon" Type="char" MaxLength="11" Nullable="false" />
+          <Property Name="email" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="irszam" Type="char" MaxLength="4" Nullable="false" />
+          <Property Name="varos" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="utca" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="hazszam" Type="nvarchar" MaxLength="10" Nullable="false" />
+          <Property Name="username" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="password" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_Rendeles_Fenyo">
+          <End Role="Fenyo" Type="Self.Fenyo" Multiplicity="1" />
+          <End Role="Rendeles" Type="Self.Rendeles" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Fenyo">
+              <PropertyRef Name="fenyo_id" />
+            </Principal>
+            <Dependent Role="Rendeles">
+              <PropertyRef Name="fenyo_fk" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Rendeles_Ugyfel">
+          <End Role="Ugyfel" Type="Self.Ugyfel" Multiplicity="1" />
+          <End Role="Rendeles" Type="Self.Rendeles" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Ugyfel">
+              <PropertyRef Name="ugyfel_id" />
+            </Principal>
+            <Dependent Role="Rendeles">
+              <PropertyRef Name="ugyfel_fk" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="KaracsonyfaModelStoreContainer">
+          <EntitySet Name="Fenyo" EntityType="Self.Fenyo" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Ugyfel" EntityType="Self.Ugyfel" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Rendeles" EntityType="Self.Rendeles" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [Rendeles].[rendeles_sk] AS [rendeles_sk], 
+    [Rendeles].[fenyo_fk] AS [fenyo_fk], 
+    [Rendeles].[ugyfel_fk] AS [ugyfel_fk], 
+    [Rendeles].[datum] AS [datum], 
+    [Rendeles].[fizmod] AS [fizmod]
+    FROM [dbo].[Rendeles] AS [Rendeles]</DefiningQuery>
+          </EntitySet>
+          <AssociationSet Name="FK_Rendeles_Fenyo" Association="Self.FK_Rendeles_Fenyo">
+            <End Role="Fenyo" EntitySet="Fenyo" />
+            <End Role="Rendeles" EntitySet="Rendeles" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Rendeles_Ugyfel" Association="Self.FK_Rendeles_Ugyfel">
+            <End Role="Ugyfel" EntitySet="Ugyfel" />
+            <End Role="Rendeles" EntitySet="Rendeles" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="KaracsonyfaModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Fenyo">
+          <Key>
+            <PropertyRef Name="fenyo_id" />
+          </Key>
+          <Property Name="fenyo_id" Type="Int32" Nullable="false" />
+          <Property Name="tipus" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="meret" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ar" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Rendeles" Relationship="Self.FK_Rendeles_Fenyo" FromRole="Fenyo" ToRole="Rendeles" />
+        </EntityType>
+        <EntityType Name="Ugyfel">
+          <Key>
+            <PropertyRef Name="ugyfel_id" />
+          </Key>
+          <Property Name="ugyfel_id" Type="Int32" Nullable="false" />
+          <Property Name="nev" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="telefon" Type="String" MaxLength="11" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="irszam" Type="String" MaxLength="4" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="varos" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="utca" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="hazszam" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="username" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="Rendeles" Relationship="Self.FK_Rendeles_Ugyfel" FromRole="Ugyfel" ToRole="Rendeles" />
+        </EntityType>
+        <EntityType Name="Rendeles">
+          <Key>
+            <PropertyRef Name="rendeles_sk" />
+            <PropertyRef Name="fenyo_fk" />
+            <PropertyRef Name="ugyfel_fk" />
+            <PropertyRef Name="datum" />
+            <PropertyRef Name="fizmod" />
+          </Key>
+          <Property Name="rendeles_sk" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="fenyo_fk" Type="Int32" Nullable="false" />
+          <Property Name="ugyfel_fk" Type="Int32" Nullable="false" />
+          <Property Name="datum" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="fizmod" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="Fenyo" Relationship="Self.FK_Rendeles_Fenyo" FromRole="Rendeles" ToRole="Fenyo" />
+          <NavigationProperty Name="Ugyfel" Relationship="Self.FK_Rendeles_Ugyfel" FromRole="Rendeles" ToRole="Ugyfel" />
+        </EntityType>
+        <Association Name="FK_Rendeles_Fenyo">
+          <End Role="Fenyo" Type="Self.Fenyo" Multiplicity="1" />
+          <End Role="Rendeles" Type="Self.Rendeles" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Fenyo">
+              <PropertyRef Name="fenyo_id" />
+            </Principal>
+            <Dependent Role="Rendeles">
+              <PropertyRef Name="fenyo_fk" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Rendeles_Ugyfel">
+          <End Role="Ugyfel" Type="Self.Ugyfel" Multiplicity="1" />
+          <End Role="Rendeles" Type="Self.Rendeles" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Ugyfel">
+              <PropertyRef Name="ugyfel_id" />
+            </Principal>
+            <Dependent Role="Rendeles">
+              <PropertyRef Name="ugyfel_fk" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="KaracsonyfaEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Fenyo" EntityType="Self.Fenyo" />
+          <EntitySet Name="Ugyfel" EntityType="Self.Ugyfel" />
+          <EntitySet Name="Rendeles" EntityType="Self.Rendeles" />
+          <AssociationSet Name="FK_Rendeles_Fenyo" Association="Self.FK_Rendeles_Fenyo">
+            <End Role="Fenyo" EntitySet="Fenyo" />
+            <End Role="Rendeles" EntitySet="Rendeles" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Rendeles_Ugyfel" Association="Self.FK_Rendeles_Ugyfel">
+            <End Role="Ugyfel" EntitySet="Ugyfel" />
+            <End Role="Rendeles" EntitySet="Rendeles" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="KaracsonyfaModelStoreContainer" CdmEntityContainer="KaracsonyfaEntities">
+          <EntitySetMapping Name="Fenyo">
+            <EntityTypeMapping TypeName="KaracsonyfaModel.Fenyo">
+              <MappingFragment StoreEntitySet="Fenyo">
+                <ScalarProperty Name="fenyo_id" ColumnName="fenyo_id" />
+                <ScalarProperty Name="tipus" ColumnName="tipus" />
+                <ScalarProperty Name="meret" ColumnName="meret" />
+                <ScalarProperty Name="ar" ColumnName="ar" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Ugyfel">
+            <EntityTypeMapping TypeName="KaracsonyfaModel.Ugyfel">
+              <MappingFragment StoreEntitySet="Ugyfel">
+                <ScalarProperty Name="ugyfel_id" ColumnName="ugyfel_id" />
+                <ScalarProperty Name="nev" ColumnName="nev" />
+                <ScalarProperty Name="telefon" ColumnName="telefon" />
+                <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="irszam" ColumnName="irszam" />
+                <ScalarProperty Name="varos" ColumnName="varos" />
+                <ScalarProperty Name="utca" ColumnName="utca" />
+                <ScalarProperty Name="hazszam" ColumnName="hazszam" />
+                <ScalarProperty Name="username" ColumnName="username" />
+                <ScalarProperty Name="password" ColumnName="password" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Rendeles">
+            <EntityTypeMapping TypeName="KaracsonyfaModel.Rendeles">
+              <MappingFragment StoreEntitySet="Rendeles">
+                <ScalarProperty Name="rendeles_sk" ColumnName="rendeles_sk" />
+                <ScalarProperty Name="fenyo_fk" ColumnName="fenyo_fk" />
+                <ScalarProperty Name="ugyfel_fk" ColumnName="ugyfel_fk" />
+                <ScalarProperty Name="datum" ColumnName="datum" />
+                <ScalarProperty Name="fizmod" ColumnName="fizmod" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
