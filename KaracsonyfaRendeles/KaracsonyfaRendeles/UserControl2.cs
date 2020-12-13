@@ -22,6 +22,8 @@ namespace KaracsonyfaRendeles
             
         }
 
+        //setter ág darabszámhoz
+
         //Választási lehetőségek
         private void tipus()
         {
@@ -65,7 +67,7 @@ namespace KaracsonyfaRendeles
 
                
                 r.ugyfel_fk = u.ugyfel_id;
-                r.fenyo_fk = ((Fenyo)comboBoxtipus.SelectedItem).fenyo_id;
+                r.fenyo_fk = ((Tipus)comboBoxtipus.SelectedItem).tipus_id;
                 //r.datum = TextBoxdatum.Text;
                 r.fizmod = comboBoxfizmod.Text;
 
@@ -76,7 +78,7 @@ namespace KaracsonyfaRendeles
                 try
                 {
                     context.SaveChanges();
-                    MessageBox.Show("Sikeres rendelés!");
+                    MessageBox.Show("Sikeres rendelés! Kérlek töltsd le a számlád!");
                     mentes.Enabled = false;
                     letoltes.Visible = true;
                     if (letoltes.Visible == true)
@@ -105,7 +107,7 @@ namespace KaracsonyfaRendeles
                 catch (Exception)
                 {
 
-                    MessageBox.Show("A sikertelen, próbálja újra!");
+                    MessageBox.Show("A rendelés sikertelen volt, próbáld újra!");
                 }
             }
             else
@@ -115,6 +117,9 @@ namespace KaracsonyfaRendeles
 
         }
 
-      
+        private void megse_Click(object sender, EventArgs e)
+        {
+            Controls.Clear();
+        }
     }
 }

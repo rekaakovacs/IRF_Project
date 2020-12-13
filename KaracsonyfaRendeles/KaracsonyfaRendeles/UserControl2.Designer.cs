@@ -66,7 +66,6 @@
             // 
             // comboBoxtipus
             // 
-            this.comboBoxtipus.FormattingEnabled = true;
             this.comboBoxtipus.Location = new System.Drawing.Point(93, 77);
             this.comboBoxtipus.Name = "comboBoxtipus";
             this.comboBoxtipus.Size = new System.Drawing.Size(121, 21);
@@ -74,7 +73,6 @@
             // 
             // comboBoxmeret
             // 
-            this.comboBoxmeret.FormattingEnabled = true;
             this.comboBoxmeret.Location = new System.Drawing.Point(93, 110);
             this.comboBoxmeret.Name = "comboBoxmeret";
             this.comboBoxmeret.Size = new System.Drawing.Size(121, 21);
@@ -295,6 +293,7 @@
             this.megse.TabIndex = 39;
             this.megse.Text = "Mégse";
             this.megse.UseVisualStyleBackColor = false;
+            this.megse.Click += new System.EventHandler(this.megse_Click);
             // 
             // label13
             // 
