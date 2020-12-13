@@ -95,6 +95,6 @@ namespace KaracsonyfaRendeles
             GetDgw();
         }
 
-        
+        //email és jelszó validálás
     }
 }
