@@ -32,11 +32,11 @@ namespace KaracsonyfaRendeles
 
         public darabButton()
         {
-            Height = 26;
+            Height = 30;
             Width = 40;
             BackColor = Color.LightSeaGreen;
             Darab = 0;
-            //MouseDown += darabButton_MouseDown;
+            
             MouseClick += DarabButton_MouseClick;
         }
 

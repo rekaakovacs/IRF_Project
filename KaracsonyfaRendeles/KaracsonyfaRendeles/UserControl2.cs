@@ -20,10 +20,11 @@ namespace KaracsonyfaRendeles
             tipus();
             meret();
             darab();
+            fizmod();
             
         }
 
-        //setter ág darabszámhoz
+       
 
         //Választási lehetőségek
         private void tipus()
@@ -48,8 +49,14 @@ namespace KaracsonyfaRendeles
         {
             darabButton db = new darabButton();
             db.Top = 140;
-            db.Left = 100;
+            db.Left = 95;
             this.Controls.Add(db);
+        }
+
+        private void fizmod()
+        {
+            comboBoxfizmod.Items.Add("előre utalás");
+            comboBoxfizmod.Items.Add("utánvéttel");
         }
 
       
@@ -77,7 +84,7 @@ namespace KaracsonyfaRendeles
                
                 r.ugyfel_fk = u.ugyfel_id;
                 r.fenyo_fk = ((Tipus)comboBoxtipus.SelectedItem).tipus_id;
-                //r.datum = TextBoxdatum.Text;
+                r.datum = Convert.ToDateTime(TextBoxdatum.Text);
                 r.fizmod = comboBoxfizmod.Text;
 
                 context.Rendeles.Add(r);
@@ -130,5 +137,7 @@ namespace KaracsonyfaRendeles
         {
             Controls.Clear();
         }
+
+
     }
 }
