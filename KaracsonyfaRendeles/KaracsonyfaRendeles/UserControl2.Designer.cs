@@ -216,7 +216,7 @@
             this.letoltes.BackColor = System.Drawing.SystemColors.WindowText;
             this.letoltes.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.letoltes.ForeColor = System.Drawing.Color.White;
-            this.letoltes.Location = new System.Drawing.Point(515, 358);
+            this.letoltes.Location = new System.Drawing.Point(578, 345);
             this.letoltes.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.letoltes.Name = "letoltes";
             this.letoltes.Size = new System.Drawing.Size(164, 50);
@@ -279,7 +279,7 @@
             this.megse.BackColor = System.Drawing.SystemColors.WindowText;
             this.megse.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.megse.ForeColor = System.Drawing.Color.White;
-            this.megse.Location = new System.Drawing.Point(701, 358);
+            this.megse.Location = new System.Drawing.Point(690, 423);
             this.megse.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.megse.Name = "megse";
             this.megse.Size = new System.Drawing.Size(113, 50);
@@ -406,7 +406,7 @@
             this.Controls.Add(this.comboBoxmeret);
             this.Controls.Add(this.comboBoxtipus);
             this.Name = "UserControl2";
-            this.Size = new System.Drawing.Size(826, 412);
+            this.Size = new System.Drawing.Size(826, 477);
             this.ResumeLayout(false);
             this.PerformLayout();
 

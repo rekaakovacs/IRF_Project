@@ -31,7 +31,7 @@ namespace KaracsonyfaRendeles
             //nagyméretű
 
             //fatörzs (téglalap)
-            g.FillRectangle(brownBrush, 100, 340, 50, 100);
+            g.FillRectangle(brownBrush, 100, 340, 50, 70);
             
             //alsó háromszög
             Point point1 = new Point(20, 340);
@@ -83,7 +83,7 @@ namespace KaracsonyfaRendeles
             //közepes méretű
 
             //fatörzs (téglalap)
-            g.FillRectangle(brownBrush, 365, 340, 50, 100);
+            g.FillRectangle(brownBrush, 365, 340, 50, 70);
 
             //alsó háromszög
             Point point10 = new Point(270, 340);
@@ -119,7 +119,7 @@ namespace KaracsonyfaRendeles
             //kisméretű
 
             //fatörzs (téglalap)
-            g.FillRectangle(brownBrush, 630, 340, 50, 100);
+            g.FillRectangle(brownBrush, 630, 340, 50, 70);
 
             //alsó háromszög
             Point point16 = new Point(533, 340);
