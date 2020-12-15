@@ -16,17 +16,17 @@ namespace KaracsonyfaRendeles
         public UserControl1()
         {
             InitializeComponent();
-            meret();
+            //meret();
         }
 
-        private void meret()
-        {
-            var meret = from m in context.Meret
-                        select m;
-            comboBoxLuc.DataSource = meret.Distinct().ToList();
-            comboBoxLuc.DisplayMember = "meretnev";
-            comboBoxLuc.ValueMember = "meret_id";
-        }
+        //private void meret()
+        //{
+        //    var meret = from m in context.Meret
+        //                select m;
+        //    comboBoxLuc.DataSource = meret.Distinct().ToList();
+        //    comboBoxLuc.DisplayMember = "meretnev";
+        //    comboBoxLuc.ValueMember = "meret_id";
+        //}
 
      
 
@@ -37,9 +37,12 @@ namespace KaracsonyfaRendeles
             Brush brownBrush = new SolidBrush(Color.Brown);
             Brush lightgreenBrush = new SolidBrush(Color.LightGreen);
 
-            //g.DrawRectangle(p, 100, 340, 50, 100);
-            g.FillRectangle(brownBrush, 100, 340, 50, 100);
 
+            //nagyméretű
+
+            //fatörzs (téglalap)
+            g.FillRectangle(brownBrush, 100, 340, 50, 100);
+            
             //alsó háromszög
             Point point1 = new Point(20, 340);
             Point point2 = new Point(130, 230);
@@ -82,21 +85,80 @@ namespace KaracsonyfaRendeles
                  point9
             };
 
-            //e.Graphics.DrawPolygon(p, felso);
+            
             e.Graphics.FillPolygon(lightgreenBrush, felso);
 
 
 
+            //közepes méretű
+
+            //fatörzs (téglalap)
+            g.FillRectangle(brownBrush, 365, 340, 50, 100);
+
+            //alsó háromszög
+            Point point10 = new Point(270, 340);
+            Point point11 = new Point(400, 230);
+            Point point12 = new Point(510, 340);
+
+            Point[] also2 =
+            {
+                 point10,
+                 point11,
+                 point12
+            };
+
+            
+            e.Graphics.FillPolygon(lightgreenBrush, also2);
+
+
+
+            //középső háromszög
+            Point point13 = new Point(290, 300);
+            Point point14 = new Point(390, 190);
+            Point point15 = new Point(490, 300);
+
+            Point[] kozepso2 =
+            {
+                 point13,
+                 point14,
+                 point15
+            };
+
+            e.Graphics.FillPolygon(lightgreenBrush, kozepso2);
+
+            //kisméretű
+
+            //fatörzs (téglalap)
+            g.FillRectangle(brownBrush, 630, 340, 50, 100);
+
+            //alsó háromszög
+            Point point16 = new Point(533, 340);
+            Point point17 = new Point(650, 230);
+            Point point18 = new Point(760, 340);
+
+            Point[] also3 =
+            {
+                 point16,
+                 point17,
+                 point18
+            };
+
+
+            e.Graphics.FillPolygon(lightgreenBrush, also3);
+
+
+
+
         }
 
-        private void comboBoxLuc_SelectedIndexChanged(object sender, EventArgs e)
-        {
+        //private void comboBoxLuc_SelectedIndexChanged(object sender, EventArgs e)
+        //{
             
 
-            if (comboBoxLuc.Text=="kisméretű")
-            {
+        //    if (comboBoxLuc.Text=="kisméretű")
+        //    {
                 
-            }
-        }
+        //    }
+        //}
     }
 }
