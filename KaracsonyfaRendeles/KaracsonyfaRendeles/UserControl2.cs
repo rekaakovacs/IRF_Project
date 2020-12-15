@@ -31,7 +31,6 @@ namespace KaracsonyfaRendeles
             darab();
             fizmod();
 
-            //CreateExcel();
         }
 
 
@@ -203,15 +202,15 @@ namespace KaracsonyfaRendeles
                 {
                     xlSheet.Cells[1, i + 1] = headers[i];
                     xlSheet.Cells[2, 1] = ugyfelnev.Text.ToString();
-                    xlSheet.Cells[2, 1] = telefonszam.Text.ToString();
-                    xlSheet.Cells[2, 1] = email.Text.ToString();
-                    xlSheet.Cells[2, 1] = telepules.Text.ToString();
-                    xlSheet.Cells[2, 1] = comboBoxtipus.Text.ToString();
-                    xlSheet.Cells[2, 1] = comboBoxmeret.Text.ToString();
-                    //xlSheet.Cells[2, 1] = db.Text.ToString();
-                    //xlSheet.Cells[2, 1] = ugyfelnev.Text.ToString();
-                    xlSheet.Cells[2, 1] = comboBoxfizmod.Text.ToString();
-                    xlSheet.Cells[2, 1] = TextBoxdatum.Text.ToString();
+                    xlSheet.Cells[2, 2] = telefonszam.Text.ToString();
+                    xlSheet.Cells[2, 3] = email.Text.ToString();
+                    xlSheet.Cells[2, 4] = telepules.Text.ToString();
+                    xlSheet.Cells[2, 5] = comboBoxtipus.Text.ToString();
+                    xlSheet.Cells[2, 6] = comboBoxmeret.Text.ToString();
+                    //xlSheet.Cells[2, 7] = db.Text.ToString();
+                    //xlSheet.Cells[2, 8] = ugyfelnev.Text.ToString();
+                    xlSheet.Cells[2, 9] = comboBoxfizmod.Text.ToString();
+                    xlSheet.Cells[2, 10] = TextBoxdatum.Text.ToString();
 
 
                 }
