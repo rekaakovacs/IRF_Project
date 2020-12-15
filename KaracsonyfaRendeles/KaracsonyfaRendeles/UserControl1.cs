@@ -19,16 +19,6 @@ namespace KaracsonyfaRendeles
             //meret();
         }
 
-        //private void meret()
-        //{
-        //    var meret = from m in context.Meret
-        //                select m;
-        //    comboBoxLuc.DataSource = meret.Distinct().ToList();
-        //    comboBoxLuc.DisplayMember = "meretnev";
-        //    comboBoxLuc.ValueMember = "meret_id";
-        //}
-
-     
 
         private void UserControl1_Paint(object sender, PaintEventArgs e)
         {
@@ -145,8 +135,6 @@ namespace KaracsonyfaRendeles
 
 
             e.Graphics.FillPolygon(lightgreenBrush, also3);
-
-
 
 
         }
