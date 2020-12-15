@@ -151,14 +151,6 @@ namespace KaracsonyfaRendeles
 
         }
 
-        //private void comboBoxLuc_SelectedIndexChanged(object sender, EventArgs e)
-        //{
-            
-
-        //    if (comboBoxLuc.Text=="kisméretű")
-        //    {
-                
-        //    }
-        //}
+       
     }
 }
