@@ -16,7 +16,7 @@ namespace KaracsonyfaRendeles
         public UserControl1()
         {
             InitializeComponent();
-            //meret();
+            
         }
 
 
