@@ -19,6 +19,7 @@ namespace KaracsonyfaRendeles
 
             tipus();
             meret();
+            darab();
             
         }
 
@@ -41,6 +42,14 @@ namespace KaracsonyfaRendeles
             comboBoxmeret.DataSource = meret.Distinct().ToList();
             comboBoxmeret.DisplayMember = "meretnev";
             comboBoxmeret.ValueMember = "meret_id";
+        }
+
+        private void darab()
+        {
+            darabButton db = new darabButton();
+            db.Top = 140;
+            db.Left = 100;
+            this.Controls.Add(db);
         }
 
       

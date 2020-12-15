@@ -30,7 +30,6 @@
         {
             this.comboBoxtipus = new System.Windows.Forms.ComboBox();
             this.comboBoxmeret = new System.Windows.Forms.ComboBox();
-            this.darabszam = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -77,13 +76,6 @@
             this.comboBoxmeret.Name = "comboBoxmeret";
             this.comboBoxmeret.Size = new System.Drawing.Size(121, 21);
             this.comboBoxmeret.TabIndex = 1;
-            // 
-            // darabszam
-            // 
-            this.darabszam.Location = new System.Drawing.Point(93, 140);
-            this.darabszam.Name = "darabszam";
-            this.darabszam.Size = new System.Drawing.Size(29, 20);
-            this.darabszam.TabIndex = 2;
             // 
             // label3
             // 
@@ -410,7 +402,6 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.darabszam);
             this.Controls.Add(this.comboBoxmeret);
             this.Controls.Add(this.comboBoxtipus);
             this.Name = "UserControl2";
@@ -424,7 +415,6 @@
 
         private System.Windows.Forms.ComboBox comboBoxtipus;
         private System.Windows.Forms.ComboBox comboBoxmeret;
-        private System.Windows.Forms.TextBox darabszam;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
