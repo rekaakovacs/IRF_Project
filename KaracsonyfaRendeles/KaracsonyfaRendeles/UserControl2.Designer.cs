@@ -223,6 +223,7 @@
             this.letoltes.TabIndex = 31;
             this.letoltes.Text = "Számla letöltése";
             this.letoltes.UseVisualStyleBackColor = false;
+            this.letoltes.Click += new System.EventHandler(this.letoltes_Click);
             // 
             // ugyfelnev
             // 
